@@ -1,0 +1,6 @@
+DOTDIR="$HOME/.dotfiles"
+
+for DOTFILE in "$DOTDIR"/system/{env,prompt,completion,paths,functions,aliases,transmission.aliases};
+do
+  [ -f $DOTFILE ] && source "$DOTFILE"
+done

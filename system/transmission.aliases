@@ -1,0 +1,27 @@
+### transmission #####
+
+alias transmission='export DISPLAY=:0;nohup transmission-gtk </dev/null &'
+alias t-start='sudo service transmission-daemon start'
+alias t-stop='sudo service transmission-daemon stop'
+alias t-reload='sudo service transmission-daemon reload'
+alias t-list='transmission-remote -ne -l'
+alias t-basicstats='transmission-remote -ne -st'
+alias t-fullstats='transmission-remote -ne -si'
+
+function t-files(){
+ transmission-remote -ne -t "$@" -f
+}
+
+t-remove(){ 
+ for id in "$@"
+ do
+  transmission-remote -ne -t "$id" -r
+ done
+}
+t-remove-all(){
+ IDS=`t-list | sed -e '1d;$d;s/^ *//;s/\*//;' | cut -s -d " " -f 1`
+ for ID in $IDS
+ do
+  t-remove $ID
+ done
+}
