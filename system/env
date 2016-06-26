@@ -1,3 +1,5 @@
+export EDITOR="kate"
+
 #History
 
 HISTSIZE=32768

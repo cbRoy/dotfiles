@@ -19,3 +19,5 @@ export PATH=~/Music:"${PATH}"
 export PATH=~/.composer/vendor/bin:"${PATH}"
 
 export TR_AUTH=chris:tofer
+
+export EVICSDK="/home/chris/Code/C/evic/evic-sdk"

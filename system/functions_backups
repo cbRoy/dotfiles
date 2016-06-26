@@ -1,0 +1,8 @@
+
+backup_mysql(){
+	mysqldump -A -uroot -p > $(date +%F)_all.sql
+}
+
+backup_www(){
+	tar -czf ${HOME}/backups/var-www/backup_$(date +%F).tar.gz /var/www
+}
