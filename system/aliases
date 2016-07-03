@@ -55,3 +55,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias play='nlvc'
 alias music='nvlc --random ~/Music'
+
+alias euu='evic-usb upload '
