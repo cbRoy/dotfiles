@@ -24,6 +24,10 @@ alias update='sudo apt-fast update'
 alias upgrade='sudo apt-fast upgrade'
 alias install='sudo apt-fast install'
 
+_apt_install_complete() { 
+    mapfile -t COMPREPLY < <(apt-cache --no-generate pkgnames "$2");
+}
+complete -F _apt_install_complete install
 
 alias rb='env DISPLAY=:0.0 rhythmbox-client --no-start'
 alias rmdlna='sudo killall minidlna;sudo minidlna'
