@@ -9,8 +9,8 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-LC_ALL="en_US.UTF-8"
-LANG="en_US"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US"
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
