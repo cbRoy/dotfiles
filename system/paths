@@ -1,17 +1,22 @@
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH:/home/chris/Music/yt2mp3"
+    PATH="$HOME/bin:$PATH"
 fi
+
+#Add yarn global bin to path
+PATH="$(yarn global bin):$PATH"
 
 #youtube to mp3 script path
 if [ -f "$HOME/Music/yt2mp3" ]; then
     PATH="$PATH:/home/chris/Music/yt2mp3"
 fi
+# Flutter SDK
+export PATH=$HOME/development/flutter/bin:$PATH
 
 # Android SDK
-export ANDROID_SDK_HOME="/usr/local/android-sdk-linux"
-export PATH="$PATH:$ANDROID_SDK_HOME/tools"
-export PATH="$PATH:$ANDROID_SDK_HOME/platform-tools"
+export ANDROID_HOME="$HOME/development/android-sdk"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 
 export PATH=~/Music:"${PATH}"
@@ -21,3 +26,7 @@ export PATH=~/.composer/vendor/bin:"${PATH}"
 export TR_AUTH=chris:tofer
 
 export EVICSDK="/home/chris/Code/C/evic/evic-sdk-original"
+
+export WORKON_HOME=$HOME/.virtualenvs   # optional
+export PROJECT_HOME=$HOME/projects      # optional
+source `which virtualenvwrapper.sh`

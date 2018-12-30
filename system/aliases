@@ -19,20 +19,25 @@ alias remove='sudo apt-get remove'
 
 alias ai='sudo apt-get install'
 
-# require apt-fast
-alias update='sudo apt-fast update'
-alias upgrade='sudo apt-fast upgrade'
-alias install='sudo apt-fast install'
+# requires apt-fast
+#alias update='sudo apt-fast update'
+#alias upgrade='sudo apt-fast upgrade'
+#alias install='sudo apt-fast install'
+
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias install='sudo apt install'
 
 _apt_install_complete() { 
     mapfile -t COMPREPLY < <(apt-cache --no-generate pkgnames "$2");
 }
+
 complete -F _apt_install_complete install
 
 alias rb='env DISPLAY=:0.0 rhythmbox-client --no-start'
 alias rmdlna='sudo killall minidlna;sudo minidlna'
 
-alias del='gvfs-trash'
+alias del='gio trash'
 
 alias rsyncrhc='rsync -r /var/www/rhc/php/ /home/chris/rhc/php'
 
@@ -61,3 +66,5 @@ alias play='nlvc'
 alias music='nvlc --random ~/Music'
 
 alias euu='evic-usb upload '
+
+alias sshfspi='sshfs pi@pi:/ /home/chris/tmp/pi'
