@@ -5,4 +5,4 @@ do
   [ -f $DOTFILE ] && source "$DOTFILE"
 done
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source ~/.fzf.bash 2>/dev/null || true
