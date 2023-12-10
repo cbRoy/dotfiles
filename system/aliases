@@ -72,3 +72,5 @@ alias sshfspi='sshfs pi@pi:/ /home/chris/tmp/pi'
 if [ -x "$(command -v batcat)" ]; then
     alias cat="batcat"
 fi
+
+alias ip='hostname -I | awk "{print $1}"'
