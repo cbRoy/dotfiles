@@ -1,16 +1,18 @@
+export PATH=$HOME/.dotfiles/bin:$PATH
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
 fi
 
 #Add yarn global bin to path
 if [ -x "$(command -v yarn)" ]; then
-    PATH="$(yarn global bin):$PATH"
+    export PATH="$(yarn global bin):$PATH"
 fi
 
 #youtube to mp3 script path
 if [ -f "$HOME/Music/yt2mp3" ]; then
-    PATH="$PATH:/home/chris/Music/yt2mp3"
+    export PATH="$PATH:/home/chris/Music/yt2mp3"
 fi
 # Flutter SDK
 export PATH=$HOME/development/flutter/bin:$PATH

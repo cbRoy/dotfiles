@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import sys
+from http.server import test, SimpleHTTPRequestHandler
+
+args = sys.argv[1:]
+
+port = 8080
+if len(args) and args[0].isdigit():
+    port = int(args[0])
+    args = args[1:]
+
+test(SimpleHTTPRequestHandler,port=port)
