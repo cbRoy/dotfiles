@@ -68,3 +68,7 @@ alias music='nvlc --random ~/Music'
 alias euu='evic-usb upload '
 
 alias sshfspi='sshfs pi@pi:/ /home/chris/tmp/pi'
+
+if [ -x "$(command -v batcat)" ]; then
+    alias cat="batcat"
+fi
